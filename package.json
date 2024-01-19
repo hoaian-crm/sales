@@ -1,8 +1,11 @@
 {
-  "name": "plugin-service",
-  "version": "0.0.1",
+  "name": "sale",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": {
+    "name": "Tran Hoai An",
+    "email": "hoaian412003@gmail.com"
+  },
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -32,12 +35,14 @@
     "@nestjs/microservices": "^10.2.10",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/typeorm": "^10.0.1",
+    "@relationc/permissions": "^1.0.10",
+    "@relationc/prototypes": "^1.1.9",
+    "@relationc/tags": "^1.1.4",
     "amqp-connection-manager": "^4.1.14",
     "amqplib": "^0.10.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "crm-logger": "^1.0.3",
-    "crm-permission": "^1.0.8",
     "crm-prototypes": "^1.0.5",
     "lodash": "^4.17.21",
     "pg": "^8.11.3",

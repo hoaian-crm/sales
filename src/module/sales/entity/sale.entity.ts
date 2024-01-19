@@ -9,6 +9,7 @@ import {
 } from 'typeorm';
 import { Customer } from './customer.entity';
 import { Product } from './product.entiry';
+import { Payment } from 'src/module/payment/payment.entity';
 
 @Entity('sales')
 export class Sale {
@@ -34,4 +35,7 @@ export class Sale {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @ManyToOne(() => Payment)
+  payment: Payment;
 }
