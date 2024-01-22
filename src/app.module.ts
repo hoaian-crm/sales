@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { SalesModule } from './module/sales/sales.module';
 import { OrderModule } from './module/order/order.module';
 import { FeeModule } from './module/fee/fee.module';
-import { PaymentController } from './module/payment/payment.controller';
 import { PaymentModule } from './module/payment/payment.module';
+import { LoggerModule } from '@relationc/logger';
 
 @Module({
   imports: [
@@ -22,10 +21,10 @@ import { PaymentModule } from './module/payment/payment.module';
       autoLoadEntities: true,
       logging: process.env.NODE_ENV === 'development',
     }),
-    // SalesModule,
+    LoggerModule,
     OrderModule,
     FeeModule,
-    PaymentModule
+    PaymentModule,
   ],
 })
 export class AppModule { }

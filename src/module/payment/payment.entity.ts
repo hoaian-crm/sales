@@ -9,9 +9,6 @@ export class Payment {
   @Column()
   name: number;
 
-  @Column()
-  image: string;
-
   @CreateDateColumn()
   createdAt: string;
 
@@ -21,4 +18,3 @@ export class Payment {
   @DeleteDateColumn()
   deletedAt: string;
 }
-

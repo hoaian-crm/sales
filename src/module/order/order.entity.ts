@@ -7,19 +7,14 @@ export class Order {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToMany(() => Fee)
-  @JoinTable({ name: 'order_fee' })
-  @JoinColumn({
-    name: 'order_id',
-    referencedColumnName: 'fee_id',
-  })
+  @OneToMany(() => Fee, (fee) => fee.orderId)
   fees: Array<Fee>;
 
-  @OneToMany(() => ProductOrder, (product) => product.sale_id)
+  @OneToMany(() => ProductOrder, (product) => product.orderId)
   products: Array<ProductOrder>;
 
   @Column()
-  customer_id: string;
+  customerId: number;
 
   @CreateDateColumn()
   createdAt: Date;
@@ -40,9 +35,6 @@ export class ProductOrder {
   name: string;
 
   @Column()
-  descripition: string;
-
-  @Column()
   image: string;
 
   @Column()
@@ -61,5 +53,5 @@ export class ProductOrder {
   deletedAt: string;
 
   @Column()
-  sale_id: number;
+  orderId: number;
 }
