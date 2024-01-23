@@ -57,6 +57,9 @@ export class OrderService {
   async get(params: GetOrderParams) {
     const order = await this.orderRepository.findOne({ where: { id: params.id }, relations: ['products', 'fees'] })
     if (!order) throw Messages.notFound;
+    order.products.map(product => order.subTotal += product.price * product.qty);
+    order.total = order.subTotal;
+    order.fees.map(fee => order.total -= fee.value)
     return order;
   }
 

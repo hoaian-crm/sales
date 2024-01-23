@@ -25,6 +25,11 @@ export class Order {
 
   @DeleteDateColumn()
   deletedAt: string;
+
+  // View fields
+  subTotal: number = 0;
+  total: number = 0;
+
 }
 
 @Entity('product_order')
