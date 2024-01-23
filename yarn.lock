@@ -929,10 +929,34 @@
     unbzip2-stream "1.4.3"
     yargs "17.7.1"
 
-"@relationc/logger@^1.1.2", "@relationc/logger@^1.2.7":
+"@relationc/logger@^1.1.2":
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/@relationc/logger/-/logger-1.2.7.tgz#9815b858e96c17905a18dea18495678fa0257c52"
   integrity sha512-MePfmgY8HeKPPdu4Nz5PD+I+eOrxrsxONmJrHUvC1PmsyEWxP5vFkVH36LGsD5hytLWSfSeeH3tWyAnwhsdJrQ==
+  dependencies:
+    "@nestjs/common" "^10.0.0"
+    "@nestjs/config" "^3.1.1"
+    "@nestjs/core" "^10.0.0"
+    "@nestjs/platform-express" "^10.0.0"
+    "@nestjs/typeorm" "^10.0.1"
+    "@relationc/prototypes" "^1.1.8"
+    "@relationc/redis-client" "^1.2.1"
+    class-transformer "^0.5.1"
+    class-validator "^0.14.0"
+    handlebars "^4.7.8"
+    node-html-markdown "^1.3.0"
+    pg "^8.11.3"
+    reflect-metadata "^0.1.13"
+    rxjs "^7.8.1"
+    stack-trace "^1.0.0-pre2"
+    stacktrace-parser "^0.1.10"
+    typeorm "^0.3.17"
+    uuid "^9.0.1"
+
+"@relationc/logger@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@relationc/logger/-/logger-1.3.0.tgz#f15ae26ac8c7aae2f947bae2dfdf323110763c4e"
+  integrity sha512-9fzyi0VayB4Zyclk+Ow3DaHuMt3O39Wcqghmbk6ty80ZVhxwXQM3YVwXsuas4U8GpePuSWV6XWi3ovWkHXuNBA==
   dependencies:
     "@nestjs/common" "^10.0.0"
     "@nestjs/config" "^3.1.1"

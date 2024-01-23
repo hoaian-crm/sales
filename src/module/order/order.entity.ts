@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
+import { AfterLoad, Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 import { Fee } from '../fee/fee.entity';
+import { Product } from 'crm-prototypes';
 
 @Entity('orders')
 export class Order {
@@ -7,10 +8,10 @@ export class Order {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @OneToMany(() => Fee, (fee) => fee.orderId)
+  @OneToMany(() => Fee, (fee) => fee.order)
   fees: Array<Fee>;
 
-  @OneToMany(() => ProductOrder, (product) => product.orderId)
+  @OneToMany(() => ProductOrder, (product) => product.order)
   products: Array<ProductOrder>;
 
   @Column()
@@ -52,6 +53,14 @@ export class ProductOrder {
   @DeleteDateColumn()
   deletedAt: string;
 
+  @ManyToOne(() => Order)
+  order: Order;
+
   @Column()
-  orderId: number;
+  productId: number;
+
+  @AfterLoad()
+  addPrefixImage() {
+    this.image = process.env.PRODUCT_IMAGE_PREFIX + this.image;
+  }
 }

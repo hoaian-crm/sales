@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Order } from "../order/order.entity";
 
 @Entity("fees")
 export class Fee {
@@ -11,8 +12,8 @@ export class Fee {
   @Column()
   name: string;
 
-  @Column()
-  orderId: number;
+  @ManyToOne(() => Order)
+  order: Order;
 
   @CreateDateColumn()
   createdAt: string;

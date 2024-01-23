@@ -1,8 +1,14 @@
 import { Type } from "class-transformer";
 import { ArrayMinSize, IsArray, IsNumber, IsObject, IsString, ValidateNested } from "class-validator";
 import { CreateFeeBody } from "src/module/fee/dto/create.dto";
+import { ProductOrderBody } from "./create.dto";
 
-export class CreateOrderBody {
+export class UpdateOrderParams {
+  @IsNumber()
+  @Type(() => Number)
+  id: number;
+}
+export class UpdateOrderBody {
 
   @IsNumber()
   @Type(() => Number)
@@ -17,15 +23,4 @@ export class CreateOrderBody {
   @IsObject({ each: true })
   @Type(() => ProductOrderBody)
   products: Array<ProductOrderBody>;
-}
-
-export class ProductOrderBody {
-
-  @IsNumber()
-  @Type(() => Number)
-  id: number;
-
-  @IsNumber()
-  @Type(() => Number)
-  qty: number;
 }

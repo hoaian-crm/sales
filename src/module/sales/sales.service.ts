@@ -5,7 +5,7 @@ import { DataSource, In, Repository } from 'typeorm';
 import { CreateSaleDto } from './dto/create-sale.dto';
 import { FindSalesDto } from './dto/find';
 import { UpdateSaleDto } from './dto/update-sale.dto';
-import { Product } from './entity/product.entiry';
+import { Product } from './entity/product.entity';
 @Injectable()
 export class SalesService {
   constructor(

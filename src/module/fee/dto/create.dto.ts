@@ -10,8 +10,5 @@ export class CreateFeeBody {
   @Type(() => Number)
   value: number;
 
-  @IsString()
-  @IsNumber()
-  @Type(() => Number)
   orderId: number;
 }

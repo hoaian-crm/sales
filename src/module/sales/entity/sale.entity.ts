@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Customer } from './customer.entity';
-import { Product } from './product.entiry';
+import { Product } from './product.entity';
 import { Payment } from 'src/module/payment/payment.entity';
 
 @Entity('sales')

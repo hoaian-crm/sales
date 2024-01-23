@@ -19,7 +19,7 @@ import { LoggerModule } from '@relationc/logger';
       database: process.env.PG_DATABASE,
       port: +process.env.PG_PORT,
       autoLoadEntities: true,
-      logging: process.env.NODE_ENV === 'development',
+      logging: process.env.NODE_ENV === 'local',
     }),
     LoggerModule,
     OrderModule,

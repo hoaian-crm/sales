@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Customer } from './entity/customer.entity';
-import { Product } from './entity/product.entiry';
+import { Product } from './entity/product.entity';
 import { Sale } from './entity/sale.entity';
 import { SalesController } from './sales.controller';
 import { SalesService } from './sales.service';

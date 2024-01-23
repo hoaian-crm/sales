@@ -11,7 +11,11 @@ export class FeeService {
     private feeRepository: Repository<Fee>,
   ) { }
 
-  create(body: CreateFeeBody) {
-    return this.feeRepository.create(body)
+  async create(body: CreateFeeBody) {
+    return this.feeRepository.save(this.feeRepository.create(body));
+  }
+
+  async createBulk(body: Array<CreateFeeBody>) {
+    return this.feeRepository.save(body.map(fee => this.feeRepository.create(fee)));
   }
 }
